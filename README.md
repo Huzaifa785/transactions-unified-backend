@@ -1,4 +1,4 @@
 # 🏦 Transactions Unified
+Transactions Unified is a platform that displays all the transactions of yours from different bank accounts on a single dashboard!
 
-- Documentation for session 1: https://huzaifa785.notion.site/Transactions-Unified-6798372e09b3462da937ced3cd0a0ed5 <br>
-In this session, we will be seeing how to setup our autehntication APIs in nodejs and plus we will test them out in postman!
+- Documentation: https://huzaifa785.notion.site/huzaifa785/Transactions-Unified-8f14c6e56cf64f0db548d498ccd667cc <br>
