@@ -42,4 +42,9 @@ require("./config/passport")(passport);
 app.use("/api/users", users);
 app.use("/api/plaid", plaid);
 
+app.get("/", (req, res) => {
+  res.send("Transactoins Unified Server is running....");
+}
+);
+
 app.listen(PORT, () => console.log(`Server running on PORT:${PORT} 🎉`));
