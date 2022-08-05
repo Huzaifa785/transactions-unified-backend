@@ -34,6 +34,11 @@ try {
   console.log(err.message);
 }
 
+app.get("/", (req, res) => {
+  res.json({ message: "Welcome to the transactions unified backend..." });
+}
+);
+
 // Passport middleware
 app.use(passport.initialize());
 // Passport config
@@ -42,9 +47,5 @@ require("./config/passport")(passport);
 app.use("/api/users", users);
 app.use("/api/plaid", plaid);
 
-app.get("/", (req, res) => {
-  res.send("Transactoins Unified Server is running....");
-}
-);
 
 app.listen(PORT, () => console.log(`Server running on PORT:${PORT} 🎉`));
