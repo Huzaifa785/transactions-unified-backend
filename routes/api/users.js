@@ -75,12 +75,13 @@ router.post("/login", async (req, res) => {
       payload,
       creds.secretOrKey,
       {
-        expiresIn: 31556926 // 1 year in seconds
+        expiresIn: 31556926, // 1 year in seconds
       },
       (err, token) => {
         res.json({
           success: true,
           token: "Bearer " + token,
+          name: user.name,
         });
       }
     );

@@ -2,10 +2,14 @@ const express = require("express");
 const mongoose = require("mongoose");
 const bodyParser = require("body-parser");
 const passport = require("passport");
+var cors = require('cors')
 
 const app = express();
 
+app.use(cors());
+
 const users = require("./routes/api/users");
+const plaid = require("./routes/api/plaid");
 
 const PORT = process.env.PORT || 9000;
 
@@ -36,5 +40,6 @@ app.use(passport.initialize());
 require("./config/passport")(passport);
 // Routes
 app.use("/api/users", users);
+app.use("/api/plaid", plaid);
 
 app.listen(PORT, () => console.log(`Server running on PORT:${PORT} 🎉`));
