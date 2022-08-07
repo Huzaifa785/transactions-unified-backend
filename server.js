@@ -43,10 +43,8 @@ require("./config/passport")(passport);
 app.use("/api/users", users);
 app.use("/api/plaid", plaid);
 
-app.use(express.static(path.join(__dirname, "/client/build")));
-
-app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname, '/client/build', 'index.html'));
+app.get("/", (req, res) => {
+  res.json({ msg: "Welcome to the Transactions Unified API" });
 });
 
 
