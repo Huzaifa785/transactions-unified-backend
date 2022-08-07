@@ -35,11 +35,6 @@ try {
   console.log(err.message);
 }
 
-app.get("/", (req, res) => {
-  res.json({ message: "Welcome to the transactions unified backend..." });
-}
-);
-
 // Passport middleware
 app.use(passport.initialize());
 // Passport config
@@ -47,6 +42,11 @@ require("./config/passport")(passport);
 // Routes
 app.use("/api/users", users);
 app.use("/api/plaid", plaid);
+
+app.get("/", (req, res) => {
+  res.json({ message: "Welcome to the transactions unified backend..." });
+}
+);
 
 if (process.env.NODE_ENV === "production") {
   // Set static folder
