@@ -43,11 +43,6 @@ require("./config/passport")(passport);
 app.use("/api/users", users);
 app.use("/api/plaid", plaid);
 
-app.get("/", (req, res) => {
-  res.json({ message: "Welcome to the transactions unified backend..." });
-}
-);
-
 if (process.env.NODE_ENV === "production") {
   // Set static folder
   app.use(express.static("client/build"));
